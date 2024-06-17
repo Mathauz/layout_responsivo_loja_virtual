@@ -1,105 +1,216 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
+    font-family: 'Source Sans 3', sans-serif;
+    background-color: #f5f5f5;
+    
+}
+
+.header {
+    background-color: #008528;
+    padding: 10px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-.sobre-a-loja, .produtos {
-    padding: 2rem;
-}
-
-.sobre-a-loja {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    justify-content: space-between;
     align-items: center;
 }
 
-.sobre-a-loja .coluna {
-    flex: 1;
-    min-width: 300px;
+.header .container {
+    flex-direction: row;
 }
 
-.sobre-a-loja .imagem img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+.logo {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.nav a:hover {
+    color: #f0f0f0;
+}
+
+.main {
+    padding: 20px 0;
+}
+
+.sobre {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.sobre-imagem {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.sobre-texto {
+    flex: 1;
+}
+
+.sobre-texto h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #008528;
+    font-style: italic;
+
+}
+
+.linha {
+    border: 0;
+    border-top: 2px solid #008528;
+    margin-bottom: 20px;
+}
+
+.sobre-texto p {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .produtos {
-    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
-.lista-produtos {
+.produtos .titulos {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #008528;
+    font-style: italic;
+
+}
+
+.produtos .linha {
+    border: 0;
+    border-top: 2px solid #008528;
+    margin-bottom: 20px;
+}
+
+.produtos-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 1rem;
+    gap: 20px;
+    justify-content: space-between;
 }
 
-.produto {
+.tenis {
+    width: 23%;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    width: 100%;
-    max-width: 220px;
+    border-radius: 10px;
+    padding: 10px;
     text-align: center;
+    background-color: #fff;
 }
 
-.produto img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+.tenis img {
+    width: 100%; 
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
 }
 
-.produto button {
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    background-color: #28a745;
-    color: #fff;
+
+
+.tenis h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.tenis p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.botao {
+    background-color: #008528;
+    color: white;
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: auto;
+.botao:hover {
+    background-color: #006F20;
 }
 
-/* Responsividade */
-@media (max-width: 1023px) {
-    .lista-produtos {
+/* Para telas menores que 640px */
+@media only screen and (max-width: 640px) {
+    .container,
+    .sobre,
+    .produtos-container {
         flex-direction: column;
         align-items: center;
     }
-}
 
-@media (max-width: 640px) {
-    .sobre-a-loja {
-        flex-direction: column;
-        text-align: center;
+    .tenis {
+        width: 100%;
     }
 
-    .lista-produtos {
-        flex-direction: column;
-        align-items: center;
+    .sobre-imagem,
+    .sobre-texto {
+        width: 100%;
+    }
+
+        .header .logo {
+            letter-spacing: normal;
+            margin-bottom: 5px;
+        }
+    
+        .sobre-texto h1 {
+            margin-top: 20px;
+        }
+
+    @media only screen and (max-width: 600px) {
+        .sobre-imagem {
+            width: 80%;
+            height: auto; 
+            margin: 0 auto; 
+        }
+    }
+    
+    
+}
+
+/* Para telas entre 641px e 1023px */
+@media only screen and (min-width: 641px) and (max-width: 1023px) {
+    .tenis {
+        width: 48%;
+    }
+}
+
+/* Para telas maiores que 1023px */
+@media only screen and (min-width: 1024px) {
+    .tenis {
+        width: 23%;
     }
 }
